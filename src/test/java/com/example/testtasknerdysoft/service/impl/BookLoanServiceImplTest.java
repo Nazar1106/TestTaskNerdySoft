@@ -41,11 +41,11 @@ class BookLoanServiceImplTest {
     @BeforeEach
     void setUp() {
         member = new Member();
-        member.setMemberId(memberId);
+        member.setId(memberId);
         member.setBorrowedBooks(new HashSet<>());
 
         book = new Book();
-        book.setBookId(bookId);
+        book.setId(bookId);
         book.setAmount(5);
         book.setBorrowers(new HashSet<>());
     }
@@ -83,7 +83,7 @@ class BookLoanServiceImplTest {
         member.setBorrowedBooks(borrowedBooks);
 
         Book book = new Book();
-        book.setBookId(bookId);
+        book.setId(bookId);
         book.setAmount(1);
         book.setBorrowers(new HashSet<>());
 
@@ -96,7 +96,7 @@ class BookLoanServiceImplTest {
     @Test
     void testProcessBookReturn_Success() {
         BookDTO bookDTO = new BookDTO();
-        bookDTO.setBookId(bookId);
+        bookDTO.setId(bookId);
         bookDTO.setTitle(book.getTitle());
         bookDTO.setAuthor(book.getAuthor());
         bookDTO.setAmount(book.getAmount());

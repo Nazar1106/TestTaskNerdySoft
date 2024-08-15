@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class BookDTO {
 
-    private Long bookId;
+    private Long id;
     @NotBlank(message = "Title is required")
     @Size(min = 3, message = "Title must be at least 3 characters long")
     @CapitalLetter

@@ -28,9 +28,7 @@ public class MemberServiceImpl implements MemberService {
     @Override
     @Transactional(readOnly = true)
     public List<MemberDTO> getAllMembers() throws ApiRequestException {
-
-        List<Member> memberList = memberRepository.findAll().stream().toList();
-
+        List<Member> memberList = memberRepository.findAll();
         return memberMapper.ListToMemberList(memberList);
     }
 

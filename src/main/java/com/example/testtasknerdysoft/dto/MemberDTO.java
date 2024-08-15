@@ -17,7 +17,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class MemberDTO {
 
-    private Long memberId;
+    private Long id;
 
     @NotBlank(message = "Name is required")
     private String name;

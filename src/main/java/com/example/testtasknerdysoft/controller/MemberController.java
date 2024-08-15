@@ -1,4 +1,4 @@
-package com.example.testtasknerdysoft.bookController;
+package com.example.testtasknerdysoft.controller;
 
 import com.example.testtasknerdysoft.dto.MemberDTO;
 import com.example.testtasknerdysoft.exception.ApiRequestException;

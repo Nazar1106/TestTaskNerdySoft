@@ -36,12 +36,12 @@ class MemberServiceImplTest {
     @BeforeEach
     public void setUp() {
         member = new Member();
-        member.setMemberId(1L);
+        member.setId(1L);
         member.setName("John Doe");
         member.setBorrowedBooks(Collections.emptySet());
 
         existingMember = new Member();
-        existingMember.setMemberId(1L);
+        existingMember.setId(1L);
         existingMember.setName("John Doe");
 
         memberDTO = new MemberDTO();

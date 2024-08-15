@@ -47,7 +47,7 @@ class BookServiceImplTest {
     @BeforeEach
     void setUp() {
         book = new Book();
-        book.setBookId(1L);
+        book.setId(1L);
         book.setTitle("Test Book");
 
         book1 = new Book();
@@ -61,10 +61,10 @@ class BookServiceImplTest {
 
         bookDuplicate = new Book();
         bookDuplicate.setTitle("Book One");
-        bookDuplicate.setBookId(3L);
+        bookDuplicate.setId(3L);
 
         existingBook = new Book();
-        existingBook.setBookId(1L);
+        existingBook.setId(1L);
         existingBook.setAmount(2);
 
         member = new Member();
@@ -72,7 +72,7 @@ class BookServiceImplTest {
         member.setBorrowedBooks(Set.of(book));
 
         bookDTO = new BookDTO();
-        bookDTO.setBookId(1L);
+        bookDTO.setId(1L);
         bookDTO.setTitle("Test Book");
         bookDTO.setAuthor("Test Author");
         bookDTO.setAmount(1);
@@ -92,7 +92,7 @@ class BookServiceImplTest {
         BookDTO result = bookService.getBookById(1L);
 
         assertNotNull(result);
-        assertEquals(bookDTO.getBookId(), result.getBookId());
+        assertEquals(bookDTO.getId(), result.getId());
         assertEquals(bookDTO.getTitle(), result.getTitle());
 
         verify(bookRepository, times(1)).findById(1L);
@@ -122,7 +122,7 @@ class BookServiceImplTest {
 
         assertNotNull(result);
         assertEquals(1, result.size());
-        assertEquals(bookDTO.getBookId(), result.get(0).getBookId());
+        assertEquals(bookDTO.getId(), result.get(0).getId());
         assertEquals(bookDTO.getTitle(), result.get(0).getTitle());
 
         verify(bookRepository, times(1)).findAll();
@@ -154,7 +154,7 @@ class BookServiceImplTest {
 
         assertNotNull(result);
         assertEquals(1, result.size());
-        assertEquals(bookDTO.getBookId(), result.get(0).getBookId());
+        assertEquals(bookDTO.getId(), result.get(0).getId());
         assertEquals(bookDTO.getTitle(), result.get(0).getTitle());
 
         verify(memberRepository, times(1)).findAllByName("Test Member");
@@ -269,7 +269,7 @@ class BookServiceImplTest {
     public void testCreateBook_NewBook() throws ApiRequestException {
 
         Book newBook = new Book();
-        newBook.setBookId(1L);
+        newBook.setId(1L);
         newBook.setTitle(bookDTO.getTitle());
         newBook.setAuthor(bookDTO.getAuthor());
         newBook.setAmount(bookDTO.getAmount());
@@ -296,7 +296,7 @@ class BookServiceImplTest {
         existingBook.setAuthor(bookDTO.getAuthor());
 
         Book updatedBook = new Book();
-        updatedBook.setBookId(1L);
+        updatedBook.setId(1L);
         updatedBook.setTitle(bookDTO.getTitle());
         updatedBook.setAuthor(bookDTO.getAuthor());
         updatedBook.setAmount(3);

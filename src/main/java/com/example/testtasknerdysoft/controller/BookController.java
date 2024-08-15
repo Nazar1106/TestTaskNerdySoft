@@ -1,4 +1,4 @@
-package com.example.testtasknerdysoft.bookController;
+package com.example.testtasknerdysoft.controller;
 
 import com.example.testtasknerdysoft.dto.BookDTO;
 import com.example.testtasknerdysoft.dto.BorrowedBookDTO;
