@@ -49,7 +49,7 @@ public class BookController {
 
     @Operation(summary = "Retrieve all distinct borrowed book names", description = "Retrieves a set of unique names of all books that have been borrowed.")
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/distinct-borrowed")
+    @GetMapping("/distinct-borrowing")
     public Set<String> getUniqueBorrowedBookNames() throws ApiRequestException {
 
         return bookService.getAllBorrowedDistinct();
@@ -58,7 +58,7 @@ public class BookController {
 
     @Operation(summary = "Retrieve all distinct borrowed books with the amount of each borrowed", description = "Retrieves a list of all distinct borrowed books along with the amount of each book that has been borrowed")
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/borrowed-books")
+    @GetMapping("/borrowing-books")
     List<BorrowedBookDTO> getDistinctBorrowedBooksWithAmounts() throws ApiRequestException {
         return bookService.getDistinctBorrowedBooksWithAmounts();
     }

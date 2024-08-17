@@ -46,7 +46,6 @@ public class MemberController {
         return memberService.createMember(member);
     }
 
-
     @Operation(summary = "Update an existing member", description = "Updates the details of an existing member identified by the ID. The request body must contain the updated details of the member")
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/{id}")
